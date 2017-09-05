@@ -39,7 +39,7 @@ First we want to see what the average number of steps taken per day.  We see tha
 rmNAhist<-hist(Sumsteps$`Number of Steps`, breaks = 5, xlab = "Total Steps", ylab = "Frequency", main = "Frequency of Total Steps Taken Per Day with NA Removed", col = "red",ylim = c(0,50) )
 ```
 
-![](Final_RepData_Project_1_files/figure-html/unnamed-chunk-5-1.png)<!-- -->
+![](Final_RepData_Project_1_files/figure-html/Frequency of Total Steps Taken Per Day with NA Removed.png)<!-- -->
 
 ```r
 rmNAhist
@@ -100,7 +100,7 @@ p2 <- ggplot(dailyact, aes(x = dailyact$`activity_omitNA$interval`, y = dailyact
 p2 + geom_line(linetype = "solid", size=0.75, color="blue")+xlab("Interval")+ylab("Average Number of Steps")+ggtitle("Average Number of Steps per Interval")
 ```
 
-![](Final_RepData_Project_1_files/figure-html/unnamed-chunk-7-1.png)<!-- -->
+![](Final_RepData_Project_1_files/figure-html/Average Number of Steps per Interval.png)<!-- -->
 ## find interval with maximum steps
 
 The daily activity plot gives us an idea of the intervals with the most steps, but with it was found that the interval with the highest activity was 835.
@@ -155,7 +155,7 @@ Next we can see the histogram of the imputed data as well as the mean and median
 imputehist <- hist(Sumsteps_impute$`Number of Steps`, breaks = 5, xlab = "Total Steps", ylab = "Frequency", main = "Frequency of Total Steps Taken Per Day with Imputed NA", col = "purple",ylim = c(0,50))
 ```
 
-![](Final_RepData_Project_1_files/figure-html/unnamed-chunk-13-1.png)<!-- -->
+![](Final_RepData_Project_1_files/figure-html/Frequency of Total Steps Taken Per Day with Imputed NA.png)<!-- -->
 
 ```r
 mean(Sumsteps_impute$`Number of Steps`)
@@ -181,7 +181,7 @@ plot( rmNAhist,col = "Blue", add=T)  # second
 legend("topright", c("Imputed Data", "NA-Removed Data"), fill=c("Red", "Blue"))
 ```
 
-![](Final_RepData_Project_1_files/figure-html/unnamed-chunk-14-1.png)<!-- -->
+![](Final_RepData_Project_1_files/figure-html/Imputed vs Removed NA.png)<!-- -->
 Looking at this overlay histogram it shows that by removing the "NA" values we are losing some frequency of steps in the range of intervals between 10,000 and 15,000.  Overall the data fits well and the missing "NA" values may not make a large difference in the overall fit of the data.
 
 ## Are there differences in activity patterns between weekdays and weekends?
@@ -207,7 +207,7 @@ xyplot(activity_meanbyinterv$steps ~ activity_meanbyinterv$interval | activity_m
        ylab="Average of Total Steps")
 ```
 
-![](Final_RepData_Project_1_files/figure-html/unnamed-chunk-15-1.png)<!-- -->
+![](Final_RepData_Project_1_files/figure-html/Time Series Plot of Average of Total Steps.png)<!-- -->
 
 
 Thank you for reading my report.
